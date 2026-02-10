@@ -1,0 +1,7 @@
+[package]
+name = "sp__s_impossible_operation_error"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+sp__t_error = { path = "../sp__t_error" }

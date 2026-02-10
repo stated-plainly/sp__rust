@@ -14,6 +14,13 @@ name = "sp__s_borrower"
 version = "1.0.0"
 
 [[package]]
+name = "sp__s_impossible_operation_error"
+version = "1.0.0"
+dependencies = [
+ "sp__t_error",
+]
+
+[[package]]
 name = "sp__s_owner"
 version = "1.0.0"
 dependencies = [
