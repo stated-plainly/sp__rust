@@ -1,0 +1,10 @@
+[package]
+name = "sp__t_lexer"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+sp__e_source_code = { path = "../sp__e_source_code" }
+sp__s_token = { path = "../sp__s_token" }
+sp__t_error = { path = "../sp__t_error" }
+sp__t_token_kind = { path = "../sp__t_token_kind" }
