@@ -1,6 +1,7 @@
 [workspace]
 resolver = "3"
 members = [
+	"sp__e_source_code",
 	"sp__s_borrower",
 	"sp__s_owner",
 	"sp__s_token",
