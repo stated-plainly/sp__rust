@@ -1,0 +1,8 @@
+[package]
+name = "sp__s_token"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+sp__s_borrower = { path = "../sp__s_borrower" }
+sp__t_token_kind = { path = "../sp__t_token_kind" }
