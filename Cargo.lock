@@ -36,6 +36,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "sp__t_ast"
+version = "1.0.0"
+
+[[package]]
 name = "sp__t_error"
 version = "1.0.0"
 
