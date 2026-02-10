@@ -1,0 +1,5 @@
+[workspace]
+resolver = "3"
+members = [
+	"sp__s_borrower",
+]
