@@ -12,3 +12,7 @@ version = "1.0.0"
 dependencies = [
  "sp__s_borrower",
 ]
+
+[[package]]
+name = "sp__t_token_kind"
+version = "1.0.0"

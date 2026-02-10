@@ -3,4 +3,5 @@ resolver = "3"
 members = [
 	"sp__s_borrower",
 	"sp__s_owner",
+	"sp__t_token_kind",
 ]
