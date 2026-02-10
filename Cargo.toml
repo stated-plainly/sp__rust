@@ -9,5 +9,6 @@ members = [
 	"sp__t_ast",
 	"sp__t_error",
 	"sp__t_lexer",
+	"sp__t_parser",
 	"sp__t_token_kind",
 ]

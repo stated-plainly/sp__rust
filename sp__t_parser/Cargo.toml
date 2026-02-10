@@ -1,0 +1,8 @@
+[package]
+name = "sp__t_parser"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+sp__t_ast = { path = "../sp__t_ast" }
+sp__t_token_kind = { path = "../sp__t_token_kind" }

@@ -54,5 +54,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "sp__t_parser"
+version = "1.0.0"
+dependencies = [
+ "sp__t_ast",
+ "sp__t_token_kind",
+]
+
+[[package]]
 name = "sp__t_token_kind"
 version = "1.0.0"
