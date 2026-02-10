@@ -30,6 +30,10 @@ impl<T> sOwner<T> {
 
         sBorrower::new(value_ptr, ref_count_ptr)
     }
+
+    pub fn borrow_count(&self) -> usize {
+        self.ref_count.load(Ordering::SeqCst)
+    }
 }
 
 impl<'a, T> sOwner<&'a T> {
