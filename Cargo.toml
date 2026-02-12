@@ -9,6 +9,7 @@ members = [
 	"sp__s_token",
 	"sp__t_ast",
 	"sp__t_error",
+	"sp__t_keyboard_friendly_name",
 	"sp__t_lexer",
 	"sp__t_parser",
 	"sp__t_token_kind",
