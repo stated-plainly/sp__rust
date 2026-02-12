@@ -56,6 +56,16 @@ dependencies = [
 ]
 
 [[package]]
+name = "sp__s_root_note"
+version = "1.0.0"
+dependencies = [
+ "sp__e_note_letter",
+ "sp__e_note_modifier",
+ "sp__e_root_note",
+ "sp__t_keyboard_friendly_name",
+]
+
+[[package]]
 name = "sp__s_token"
 version = "1.0.0"
 dependencies = [
