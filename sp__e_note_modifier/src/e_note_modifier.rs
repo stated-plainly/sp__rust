@@ -26,13 +26,13 @@ impl Display for eNoteModifier {
 }
 
 impl tKeyboardFriendlyName for eNoteModifier {
-    fn get_keyboard_friendly_name(&self) -> &'static str {
+    fn get_keyboard_friendly_name(&self) -> String {
         match self {
             Self::DoubleFlat => "bb",
             Self::Flat => "b",
             Self::Natural => "",
             Self::Sharp => "s",
             Self::DoubleSharp => "ss",
-        }
+        }.to_string()
     }
 }

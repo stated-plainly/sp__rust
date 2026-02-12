@@ -30,7 +30,7 @@ impl Display for eNoteLetter {
 }
 
 impl tKeyboardFriendlyName for eNoteLetter {
-    fn get_keyboard_friendly_name(&self) -> &'static str {
+    fn get_keyboard_friendly_name(&self) -> String {
         match self {
             Self::C => "c",
             Self::D => "d",
@@ -39,6 +39,6 @@ impl tKeyboardFriendlyName for eNoteLetter {
             Self::G => "g",
             Self::A => "a",
             Self::B => "b",
-        }
+        }.to_string()
     }
 }

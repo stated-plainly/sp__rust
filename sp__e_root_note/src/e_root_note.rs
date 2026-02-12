@@ -71,7 +71,7 @@ impl Display for eRootNote {
 }
 
 impl tKeyboardFriendlyName for eRootNote {
-    fn get_keyboard_friendly_name(&self) -> &'static str {
+    fn get_keyboard_friendly_name(&self) -> String {
         match self {
             // C
             Self::CFlat => "cb",
@@ -101,6 +101,6 @@ impl tKeyboardFriendlyName for eRootNote {
             Self::BFlat => "bb",
             Self::B => "b",
             Self::BSharp => "bs",
-        }
+        }.to_string()
     }
 }

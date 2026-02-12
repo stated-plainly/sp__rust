@@ -59,7 +59,7 @@ impl Display for eScaleDegree {
 }
 
 impl tKeyboardFriendlyName for eScaleDegree {
-    fn get_keyboard_friendly_name(&self) -> &'static str {
+    fn get_keyboard_friendly_name(&self) -> String {
         match self {
             Self::One => "1",
             Self::TwoFlat => "2b",
@@ -83,6 +83,6 @@ impl tKeyboardFriendlyName for eScaleDegree {
             Self::ElevenSharp => "11s",
             Self::ThirteenFlat => "13b",
             Self::Thirteen => "13",
-        }
+        }.to_string()
     }
 }
