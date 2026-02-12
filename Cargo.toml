@@ -3,6 +3,7 @@ resolver = "3"
 members = [
 	"sp__e_note_letter",
 	"sp__e_note_modifier",
+	"sp__e_root_note",
 	"sp__e_scale_degree",
 	"sp__e_source_code",
 	"sp__s_borrower",
