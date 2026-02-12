@@ -1,5 +1,7 @@
 use std::fmt::Display;
 
+use sp__t_keyboard_friendly_name::tKeyboardFriendlyName;
+
 #[derive(Clone, Copy)]
 pub enum eScaleDegree {
     One,
@@ -51,6 +53,35 @@ impl Display for eScaleDegree {
             Self::ElevenSharp => write!(f, "{}", "11♯"),
             Self::ThirteenFlat => write!(f, "{}", "13♭"),
             Self::Thirteen => write!(f, "{}", "13"),
+        }
+    }
+}
+
+impl tKeyboardFriendlyName for eScaleDegree {
+    fn get_keyboard_friendly_name(&self) -> &'static str {
+        match self {
+            Self::One => "1",
+            Self::TwoFlat => "2b",
+            Self::Two => "2",
+            Self::ThreeFlat => "3b",
+            Self::Three => "3",
+            Self::Four => "4",
+            Self::FourSharp => "4s",
+            Self::FiveFlat => "5b",
+            Self::Five => "5",
+            Self::FiveSharp => "5s",
+            Self::SixFlat => "6b",
+            Self::Six => "6",
+            Self::SevenFlat => "7b",
+            Self::Seven => "7",
+            Self::Eight => "8",
+            Self::NineFlat => "9b",
+            Self::Nine => "9",
+            Self::NineSharp => "9s",
+            Self::Eleven => "11",
+            Self::ElevenSharp => "11s",
+            Self::ThirteenFlat => "13b",
+            Self::Thirteen => "13",
         }
     }
 }
