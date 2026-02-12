@@ -1,6 +1,7 @@
 [workspace]
 resolver = "3"
 members = [
+	"sp__e_scale_degree",
 	"sp__e_source_code",
 	"sp__s_borrower",
 	"sp__s_impossible_operation_error",

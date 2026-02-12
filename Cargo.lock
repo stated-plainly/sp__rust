@@ -3,6 +3,10 @@
 version = 4
 
 [[package]]
+name = "sp__e_scale_degree"
+version = "1.0.0"
+
+[[package]]
 name = "sp__e_source_code"
 version = "1.0.0"
 dependencies = [
