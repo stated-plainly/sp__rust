@@ -3,6 +3,13 @@
 version = 4
 
 [[package]]
+name = "sp__e_note_letter"
+version = "1.0.0"
+dependencies = [
+ "sp__t_keyboard_friendly_name",
+]
+
+[[package]]
 name = "sp__e_scale_degree"
 version = "1.0.0"
 dependencies = [

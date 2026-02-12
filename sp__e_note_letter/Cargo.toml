@@ -1,0 +1,7 @@
+[package]
+name = "sp__e_note_letter"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+sp__t_keyboard_friendly_name = { path = "../sp__t_keyboard_friendly_name" }
