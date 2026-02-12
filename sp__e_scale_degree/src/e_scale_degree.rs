@@ -2,8 +2,9 @@ use std::fmt::Display;
 
 use sp__t_keyboard_friendly_name::tKeyboardFriendlyName;
 
-#[derive(Clone, Copy)]
+#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Hash, Debug, Default)]
 pub enum eScaleDegree {
+    #[default]
     One,
     TwoFlat,
     Two,
