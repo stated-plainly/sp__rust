@@ -43,32 +43,32 @@ impl Display for eTwoFlatNote {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             // G
-            Self::GDoubleFlat => write!(f, "{}", "G♭♭"),
+            Self::GDoubleFlat => write!(f, "{}", "G𝄫"),
             Self::GFlat => write!(f, "{}", "G♭"),
-            Self::GNatural => write!(f, "{}", "G"),
+            Self::GNatural => write!(f, "{}", "G♮"),
             // D
-            Self::DDoubleFlat => write!(f, "{}", "D♭♭"),
+            Self::DDoubleFlat => write!(f, "{}", "D𝄫"),
             Self::DFlat => write!(f, "{}", "D♭"),
-            Self::DNatural => write!(f, "{}", "D"),
+            Self::DNatural => write!(f, "{}", "D♮"),
             // A
-            Self::ADoubleFlat => write!(f, "{}", "A♭♭"),
+            Self::ADoubleFlat => write!(f, "{}", "A𝄫"),
             Self::AFlat => write!(f, "{}", "A♭"),
-            Self::ANatural => write!(f, "{}", "A"),
+            Self::ANatural => write!(f, "{}", "A♮"),
             // E
-            Self::EDoubleFlat => write!(f, "{}", "E♭♭"),
+            Self::EDoubleFlat => write!(f, "{}", "E𝄫"),
             Self::EFlat => write!(f, "{}", "E♭"),
-            Self::ENatural => write!(f, "{}", "E"),
+            Self::ENatural => write!(f, "{}", "E♮"),
             // B
-            Self::BDoubleFlat => write!(f, "{}", "B♭♭"),
+            Self::BDoubleFlat => write!(f, "{}", "B𝄫"),
             Self::BFlat => write!(f, "{}", "B♭"),
-            Self::BNatural => write!(f, "{}", "B"),
+            Self::BNatural => write!(f, "{}", "B♮"),
             // F
             Self::FFlat => write!(f, "{}", "F♭"),
-            Self::FNatural => write!(f, "{}", "F"),
+            Self::FNatural => write!(f, "{}", "F♮"),
             Self::FSharp => write!(f, "{}", "F♯"),
             // C
             Self::CFlat => write!(f, "{}", "C♭"),
-            Self::CNatural => write!(f, "{}", "C"),
+            Self::CNatural => write!(f, "{}", "C♮"),
             Self::CSharp => write!(f, "{}", "C♯"),
         }
     }
@@ -143,7 +143,7 @@ impl TryFrom<(eNoteLetter, eNoteModifier)> for eTwoFlatNote {
             (eNoteLetter::C, eNoteModifier::Natural) => Ok(Self::CNatural),
             (eNoteLetter::C, eNoteModifier::Sharp) => Ok(Self::CSharp),
             // Failure
-            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 1 note", note, modifier).as_str()))),
+            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 2b note", note, modifier).as_str()))),
         }
     }
 }

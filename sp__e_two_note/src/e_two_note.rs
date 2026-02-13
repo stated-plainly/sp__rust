@@ -7,22 +7,14 @@ use sp__t_error::tError;
 use sp__t_keyboard_friendly_name::tKeyboardFriendlyName;
 
 #[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Hash, Debug, Default)]
-pub enum eOneNote {
-    // F
-    FFlat,
-    FNatural,
-    FSharp,
-    // C
-    CFlat,
-    #[default]
-    CNatural,
-    CSharp,
+pub enum eTwoNote {
     // G
     GFlat,
     GNatural,
     GSharp,
     // D
     DFlat,
+    #[default]
     DNatural,
     DSharp,
     // A
@@ -37,19 +29,19 @@ pub enum eOneNote {
     BFlat,
     BNatural,
     BSharp,
+    // F
+    FNatural,
+    FSharp,
+    FDoubleSharp,
+    // C
+    CNatural,
+    CSharp,
+    CDoubleSharp,
 }
 
-impl Display for eOneNote {
+impl Display for eTwoNote {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
-            // F
-            Self::FFlat => write!(f, "{}", "F♭"),
-            Self::FNatural => write!(f, "{}", "F♮"),
-            Self::FSharp => write!(f, "{}", "F♯"),
-            // C
-            Self::CFlat => write!(f, "{}", "C♭"),
-            Self::CNatural => write!(f, "{}", "C♮"),
-            Self::CSharp => write!(f, "{}", "C♯"),
             // G
             Self::GFlat => write!(f, "{}", "G♭"),
             Self::GNatural => write!(f, "{}", "G♮"),
@@ -70,21 +62,21 @@ impl Display for eOneNote {
             Self::BFlat => write!(f, "{}", "B♭"),
             Self::BNatural => write!(f, "{}", "B♮"),
             Self::BSharp => write!(f, "{}", "B♯"),
+            // F
+            Self::FNatural => write!(f, "{}", "F♮"),
+            Self::FSharp => write!(f, "{}", "F♯"),
+            Self::FDoubleSharp => write!(f, "{}", "F𝄪"),
+            // C
+            Self::CNatural => write!(f, "{}", "C♮"),
+            Self::CSharp => write!(f, "{}", "C♯"),
+            Self::CDoubleSharp => write!(f, "{}", "C𝄪"),
         }
     }
 }
 
-impl tKeyboardFriendlyName for eOneNote {
+impl tKeyboardFriendlyName for eTwoNote {
     fn get_keyboard_friendly_name(&self) -> String {
         match self {
-            // F
-            Self::FFlat => "fb",
-            Self::FNatural => "f",
-            Self::FSharp => "fs",
-            // C
-            Self::CFlat => "cb",
-            Self::CNatural => "c",
-            Self::CSharp => "cs",
             // G
             Self::GFlat => "gb",
             Self::GNatural => "g",
@@ -105,23 +97,23 @@ impl tKeyboardFriendlyName for eOneNote {
             Self::BFlat => "bb",
             Self::BNatural => "b",
             Self::BSharp => "bs",
+            // F
+            Self::FNatural => "f",
+            Self::FSharp => "fs",
+            Self::FDoubleSharp => "fss",
+            // C
+            Self::CNatural => "c",
+            Self::CSharp => "cs",
+            Self::CDoubleSharp => "css",
         }.to_string()
     }
 }
 
-impl TryFrom<(eNoteLetter, eNoteModifier)> for eOneNote {
+impl TryFrom<(eNoteLetter, eNoteModifier)> for eTwoNote {
     type Error = Box<dyn tError>;
 
     fn try_from(value: (eNoteLetter, eNoteModifier)) -> Result<Self, Self::Error> {
         match value {
-            // F
-            (eNoteLetter::F, eNoteModifier::Flat) => Ok(Self::FFlat),
-            (eNoteLetter::F, eNoteModifier::Natural) => Ok(Self::FNatural),
-            (eNoteLetter::F, eNoteModifier::Sharp) => Ok(Self::FSharp),
-            // C
-            (eNoteLetter::C, eNoteModifier::Flat) => Ok(Self::CFlat),
-            (eNoteLetter::C, eNoteModifier::Natural) => Ok(Self::CNatural),
-            (eNoteLetter::C, eNoteModifier::Sharp) => Ok(Self::CSharp),
             // G
             (eNoteLetter::G, eNoteModifier::Flat) => Ok(Self::GFlat),
             (eNoteLetter::G, eNoteModifier::Natural) => Ok(Self::GNatural),
@@ -142,8 +134,16 @@ impl TryFrom<(eNoteLetter, eNoteModifier)> for eOneNote {
             (eNoteLetter::B, eNoteModifier::Flat) => Ok(Self::BFlat),
             (eNoteLetter::B, eNoteModifier::Natural) => Ok(Self::BNatural),
             (eNoteLetter::B, eNoteModifier::Sharp) => Ok(Self::BSharp),
+            // F
+            (eNoteLetter::F, eNoteModifier::Natural) => Ok(Self::FNatural),
+            (eNoteLetter::F, eNoteModifier::Sharp) => Ok(Self::FSharp),
+            (eNoteLetter::F, eNoteModifier::DoubleSharp) => Ok(Self::FDoubleSharp),
+            // C
+            (eNoteLetter::C, eNoteModifier::Natural) => Ok(Self::CNatural),
+            (eNoteLetter::C, eNoteModifier::Sharp) => Ok(Self::CSharp),
+            (eNoteLetter::C, eNoteModifier::DoubleSharp) => Ok(Self::CDoubleSharp),
             // Failure
-            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 1 note", note, modifier).as_str()))),
+            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 2 note", note, modifier).as_str()))),
         }
     }
 }
