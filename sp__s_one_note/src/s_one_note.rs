@@ -2,163 +2,164 @@ use std::fmt::Display;
 
 use sp__e_note_letter::eNoteLetter;
 use sp__e_note_modifier::eNoteModifier;
-use sp__e_root_note::eRootNote;
+use sp__e_one_note::eOneNote;
 use sp__t_keyboard_friendly_name::tKeyboardFriendlyName;
 
-pub struct sRootNote {
+#[derive(Clone)]
+pub struct sOneNote {
     letter: eNoteLetter,
     modifier: eNoteModifier,
 }
 
-impl sRootNote {
-    pub fn new(root: eRootNote) -> Self {
+impl sOneNote {
+    pub fn new(root: eOneNote) -> Self {
         Self::from(root)
     }
 }
 
-impl Display for sRootNote {
+impl Display for sOneNote {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}{}", self.letter, self.modifier)
     }
 }
 
-impl tKeyboardFriendlyName for sRootNote {
+impl tKeyboardFriendlyName for sOneNote {
     fn get_keyboard_friendly_name(&self) -> String {
         format!("{}{}", self.letter.get_keyboard_friendly_name(), self.modifier.get_keyboard_friendly_name())
     }
 }
 
-impl From<eRootNote> for sRootNote {
-    fn from(value: eRootNote) -> Self {
+impl From<eOneNote> for sOneNote {
+    fn from(value: eOneNote) -> Self {
         match value {
             // C
-            eRootNote::CFlat => {
+            eOneNote::CFlat => {
                 return Self {
                     letter: eNoteLetter::C,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eRootNote::C => {
+            eOneNote::C => {
                 return Self {
                     letter: eNoteLetter::C,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eRootNote::CSharp => {
+            eOneNote::CSharp => {
                 return Self {
                     letter: eNoteLetter::C,
                     modifier: eNoteModifier::Sharp,
                 }
             }
             // D
-            eRootNote::DFlat => {
+            eOneNote::DFlat => {
                 return Self {
                     letter: eNoteLetter::D,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eRootNote::D => {
+            eOneNote::D => {
                 return Self {
                     letter: eNoteLetter::D,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eRootNote::DSharp => {
+            eOneNote::DSharp => {
                 return Self {
                     letter: eNoteLetter::D,
                     modifier: eNoteModifier::Sharp,
                 }
             }
             // E
-            eRootNote::EFlat => {
+            eOneNote::EFlat => {
                 return Self {
                     letter: eNoteLetter::E,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eRootNote::E => {
+            eOneNote::E => {
                 return Self {
                     letter: eNoteLetter::E,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eRootNote::ESharp => {
+            eOneNote::ESharp => {
                 return Self {
                     letter: eNoteLetter::E,
                     modifier: eNoteModifier::Sharp,
                 }
             }
             // F
-            eRootNote::FFlat => {
+            eOneNote::FFlat => {
                 return Self {
                     letter: eNoteLetter::F,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eRootNote::F => {
+            eOneNote::F => {
                 return Self {
                     letter: eNoteLetter::F,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eRootNote::FSharp => {
+            eOneNote::FSharp => {
                 return Self {
                     letter: eNoteLetter::F,
                     modifier: eNoteModifier::Sharp,
                 }
             }
             // G
-            eRootNote::GFlat => {
+            eOneNote::GFlat => {
                 return Self {
                     letter: eNoteLetter::G,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eRootNote::G => {
+            eOneNote::G => {
                 return Self {
                     letter: eNoteLetter::G,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eRootNote::GSharp => {
+            eOneNote::GSharp => {
                 return Self {
                     letter: eNoteLetter::G,
                     modifier: eNoteModifier::Sharp,
                 }
             }
             // A
-            eRootNote::AFlat => {
+            eOneNote::AFlat => {
                 return Self {
                     letter: eNoteLetter::A,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eRootNote::A => {
+            eOneNote::A => {
                 return Self {
                     letter: eNoteLetter::A,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eRootNote::ASharp => {
+            eOneNote::ASharp => {
                 return Self {
                     letter: eNoteLetter::A,
                     modifier: eNoteModifier::Sharp,
                 }
             }
             // B
-            eRootNote::BFlat => {
+            eOneNote::BFlat => {
                 return Self {
                     letter: eNoteLetter::B,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eRootNote::B => {
+            eOneNote::B => {
                 return Self {
                     letter: eNoteLetter::B,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eRootNote::BSharp => {
+            eOneNote::BSharp => {
                 return Self {
                     letter: eNoteLetter::B,
                     modifier: eNoteModifier::Sharp,
