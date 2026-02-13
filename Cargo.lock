@@ -209,6 +209,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "sp__e_thirteen_flat_note"
+version = "1.0.0"
+dependencies = [
+ "sp__e_note_letter",
+ "sp__e_note_modifier",
+ "sp__s_impossible_operation_error",
+ "sp__t_error",
+ "sp__t_keyboard_friendly_name",
+]
+
+[[package]]
 name = "sp__e_three_flat_note"
 version = "1.0.0"
 dependencies = [

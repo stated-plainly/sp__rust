@@ -25,6 +25,7 @@ members = [
 	"sp__e_two_note",
 	"sp__e_scale_degree",
 	"sp__e_source_code",
+	"sp__e_thirteen_flat_note",
 	"sp__s_borrower",
 	"sp__s_impossible_operation_error",
 	"sp__s_owner",
