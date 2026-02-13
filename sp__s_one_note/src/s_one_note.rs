@@ -4,6 +4,7 @@ use sp__e_note_letter::eNoteLetter;
 use sp__e_note_modifier::eNoteModifier;
 use sp__e_one_note::eOneNote;
 use sp__t_keyboard_friendly_name::tKeyboardFriendlyName;
+use sp__t_note::tNote;
 
 #[derive(Clone)]
 pub struct sOneNote {
@@ -14,6 +15,18 @@ pub struct sOneNote {
 impl sOneNote {
     pub fn new(root: eOneNote) -> Self {
         Self::from(root)
+    }
+}
+
+impl tNote for sOneNote {
+    type EnumNoteVariant = eOneNote;
+    
+    fn get_letter(&self) -> eNoteLetter {
+        self.letter
+    }
+
+    fn get_modifier(&self) -> eNoteModifier {
+        self.modifier
     }
 }
 
@@ -32,63 +45,6 @@ impl tKeyboardFriendlyName for sOneNote {
 impl From<eOneNote> for sOneNote {
     fn from(value: eOneNote) -> Self {
         match value {
-            // C
-            eOneNote::CFlat => {
-                return Self {
-                    letter: eNoteLetter::C,
-                    modifier: eNoteModifier::Flat,
-                }
-            }
-            eOneNote::C => {
-                return Self {
-                    letter: eNoteLetter::C,
-                    modifier: eNoteModifier::Natural,
-                }
-            }
-            eOneNote::CSharp => {
-                return Self {
-                    letter: eNoteLetter::C,
-                    modifier: eNoteModifier::Sharp,
-                }
-            }
-            // D
-            eOneNote::DFlat => {
-                return Self {
-                    letter: eNoteLetter::D,
-                    modifier: eNoteModifier::Flat,
-                }
-            }
-            eOneNote::D => {
-                return Self {
-                    letter: eNoteLetter::D,
-                    modifier: eNoteModifier::Natural,
-                }
-            }
-            eOneNote::DSharp => {
-                return Self {
-                    letter: eNoteLetter::D,
-                    modifier: eNoteModifier::Sharp,
-                }
-            }
-            // E
-            eOneNote::EFlat => {
-                return Self {
-                    letter: eNoteLetter::E,
-                    modifier: eNoteModifier::Flat,
-                }
-            }
-            eOneNote::E => {
-                return Self {
-                    letter: eNoteLetter::E,
-                    modifier: eNoteModifier::Natural,
-                }
-            }
-            eOneNote::ESharp => {
-                return Self {
-                    letter: eNoteLetter::E,
-                    modifier: eNoteModifier::Sharp,
-                }
-            }
             // F
             eOneNote::FFlat => {
                 return Self {
@@ -96,7 +52,7 @@ impl From<eOneNote> for sOneNote {
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eOneNote::F => {
+            eOneNote::FNatural => {
                 return Self {
                     letter: eNoteLetter::F,
                     modifier: eNoteModifier::Natural,
@@ -108,6 +64,25 @@ impl From<eOneNote> for sOneNote {
                     modifier: eNoteModifier::Sharp,
                 }
             }
+            // C
+            eOneNote::CFlat => {
+                return Self {
+                    letter: eNoteLetter::C,
+                    modifier: eNoteModifier::Flat,
+                }
+            }
+            eOneNote::CNatural => {
+                return Self {
+                    letter: eNoteLetter::C,
+                    modifier: eNoteModifier::Natural,
+                }
+            }
+            eOneNote::CSharp => {
+                return Self {
+                    letter: eNoteLetter::C,
+                    modifier: eNoteModifier::Sharp,
+                }
+            }
             // G
             eOneNote::GFlat => {
                 return Self {
@@ -115,7 +90,7 @@ impl From<eOneNote> for sOneNote {
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eOneNote::G => {
+            eOneNote::GNatural => {
                 return Self {
                     letter: eNoteLetter::G,
                     modifier: eNoteModifier::Natural,
@@ -127,6 +102,25 @@ impl From<eOneNote> for sOneNote {
                     modifier: eNoteModifier::Sharp,
                 }
             }
+            // D
+            eOneNote::DFlat => {
+                return Self {
+                    letter: eNoteLetter::D,
+                    modifier: eNoteModifier::Flat,
+                }
+            }
+            eOneNote::DNatural => {
+                return Self {
+                    letter: eNoteLetter::D,
+                    modifier: eNoteModifier::Natural,
+                }
+            }
+            eOneNote::DSharp => {
+                return Self {
+                    letter: eNoteLetter::D,
+                    modifier: eNoteModifier::Sharp,
+                }
+            }
             // A
             eOneNote::AFlat => {
                 return Self {
@@ -134,7 +128,7 @@ impl From<eOneNote> for sOneNote {
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eOneNote::A => {
+            eOneNote::ANatural => {
                 return Self {
                     letter: eNoteLetter::A,
                     modifier: eNoteModifier::Natural,
@@ -146,6 +140,25 @@ impl From<eOneNote> for sOneNote {
                     modifier: eNoteModifier::Sharp,
                 }
             }
+            // E
+            eOneNote::EFlat => {
+                return Self {
+                    letter: eNoteLetter::E,
+                    modifier: eNoteModifier::Flat,
+                }
+            }
+            eOneNote::ENatural => {
+                return Self {
+                    letter: eNoteLetter::E,
+                    modifier: eNoteModifier::Natural,
+                }
+            }
+            eOneNote::ESharp => {
+                return Self {
+                    letter: eNoteLetter::E,
+                    modifier: eNoteModifier::Sharp,
+                }
+            }
             // B
             eOneNote::BFlat => {
                 return Self {
@@ -153,7 +166,7 @@ impl From<eOneNote> for sOneNote {
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eOneNote::B => {
+            eOneNote::BNatural => {
                 return Self {
                     letter: eNoteLetter::B,
                     modifier: eNoteModifier::Natural,

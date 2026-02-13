@@ -286,6 +286,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "sp__s_one_note"
+version = "1.0.0"
+dependencies = [
+ "sp__e_note_letter",
+ "sp__e_note_modifier",
+ "sp__e_one_note",
+ "sp__t_keyboard_friendly_name",
+ "sp__t_note",
+]
+
+[[package]]
 name = "sp__s_owner"
 version = "1.0.0"
 dependencies = [
@@ -328,6 +339,7 @@ version = "1.0.0"
 dependencies = [
  "sp__e_note_letter",
  "sp__e_note_modifier",
+ "sp__t_keyboard_friendly_name",
 ]
 
 [[package]]
