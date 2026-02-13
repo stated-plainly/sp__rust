@@ -1,0 +1,11 @@
+[package]
+name = "sp__e_eight_note"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+sp__e_note_letter = { path = "../sp__e_note_letter" }
+sp__e_note_modifier = { path = "../sp__e_note_modifier" }
+sp__s_impossible_operation_error = { path = "../sp__s_impossible_operation_error" }
+sp__t_error = { path = "../sp__t_error" }
+sp__t_keyboard_friendly_name = { path = "../sp__t_keyboard_friendly_name" }

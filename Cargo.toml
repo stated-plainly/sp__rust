@@ -1,6 +1,7 @@
 [workspace]
 resolver = "3"
 members = [
+	"sp__e_eight_note",
 	"sp__e_five_flat_note",
 	"sp__e_five_note",
 	"sp__e_five_sharp_note",
