@@ -6,11 +6,14 @@ Truth be told... I don't even really *like* coding in **Rust** but it's safe and
 Longer-term, I'd like to have a proper crack at writing a language of my own, called **casper**, but that's a long way off.
 
 I'm still very much **figuring out** the syntax, but I'm basically aiming for the versatility and fun of coding in **JS**, but safer:
+
+*js*
 ```js
 let name = 'James';
 name = 10;
 ```
 
+*casper*
 ```casper
 -- manually annotated
 res name : text = (James); -- type annotation around constructor e.g. text() isn't needed when the variable being passed to is annotated, hence (James)
