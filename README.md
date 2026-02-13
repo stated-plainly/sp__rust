@@ -1,4 +1,4 @@
-#Stated Plainly :: Rust
+# Stated Plainly :: Rust
 Stated plainly, this is a big ole' dumping ground for everything I write in **Rust**.
 
 Truth be told... I don't even really *like* coding in **Rust** but it's safe and performant, so I've kinda settled on it as the sensible **ground floor** for everything I do coding-wise going forward.
