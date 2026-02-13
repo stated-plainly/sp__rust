@@ -2,6 +2,7 @@
 resolver = "3"
 members = [
 	"sp__e_five_flat_note",
+	"sp__e_five_note",
 	"sp__e_four_note",
 	"sp__e_four_sharp_note",
 	"sp__e_note_letter",
