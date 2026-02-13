@@ -4,6 +4,7 @@ use sp__e_note_letter::eNoteLetter;
 use sp__e_note_modifier::eNoteModifier;
 use sp__e_two_note::eTwoNote;
 use sp__t_keyboard_friendly_name::tKeyboardFriendlyName;
+use sp__t_note::tNote;
 
 #[derive(Clone)]
 pub struct sTwoNote {
@@ -14,6 +15,18 @@ pub struct sTwoNote {
 impl sTwoNote {
     pub fn new(root: eTwoNote) -> Self {
         Self::from(root)
+    }
+}
+
+impl tNote for sTwoNote {
+    type EnumNoteVariant = eTwoNote;
+
+    fn get_letter(&self) -> eNoteLetter {
+        self.letter
+    }
+
+    fn get_modifier(&self) -> eNoteModifier {
+        self.modifier
     }
 }
 

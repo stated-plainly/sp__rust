@@ -2,24 +2,24 @@ use std::fmt::Display;
 
 use sp__e_note_letter::eNoteLetter;
 use sp__e_note_modifier::eNoteModifier;
-use sp__e_two_flat_note::eTwoFlatNote;
+use sp__e_three_flat_note::eThreeFlatNote;
 use sp__t_keyboard_friendly_name::tKeyboardFriendlyName;
 use sp__t_note::tNote;
 
 #[derive(Clone)]
-pub struct sTwoFlatNote {
+pub struct sThreeFlatNote {
     letter: eNoteLetter,
     modifier: eNoteModifier,
 }
 
-impl sTwoFlatNote {
-    pub fn new(root: eTwoFlatNote) -> Self {
+impl sThreeFlatNote {
+    pub fn new(root: eThreeFlatNote) -> Self {
         Self::from(root)
     }
 }
 
-impl tNote for sTwoFlatNote {
-    type EnumNoteVariant = eTwoFlatNote;
+impl tNote for sThreeFlatNote {
+    type EnumNoteVariant = eThreeFlatNote;
 
     fn get_letter(&self) -> eNoteLetter {
         self.letter
@@ -30,151 +30,151 @@ impl tNote for sTwoFlatNote {
     }
 }
 
-impl Display for sTwoFlatNote {
+impl Display for sThreeFlatNote {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "{}{}", self.letter, self.modifier)
     }
 }
 
-impl tKeyboardFriendlyName for sTwoFlatNote {
+impl tKeyboardFriendlyName for sThreeFlatNote {
     fn get_keyboard_friendly_name(&self) -> String {
         format!("{}{}", self.letter.get_keyboard_friendly_name(), self.modifier.get_keyboard_friendly_name())
     }
 }
 
-impl From<eTwoFlatNote> for sTwoFlatNote {
-    fn from(value: eTwoFlatNote) -> Self {
+impl From<eThreeFlatNote> for sThreeFlatNote {
+    fn from(value: eThreeFlatNote) -> Self {
         match value {
-            // G
-            eTwoFlatNote::GDoubleFlat => {
-                return Self {
-                    letter: eNoteLetter::G,
-                    modifier: eNoteModifier::DoubleFlat,
-                }
-            }
-            eTwoFlatNote::GFlat => {
-                return Self {
-                    letter: eNoteLetter::G,
-                    modifier: eNoteModifier::Flat,
-                }
-            }
-            eTwoFlatNote::GNatural => {
-                return Self {
-                    letter: eNoteLetter::G,
-                    modifier: eNoteModifier::Natural,
-                }
-            }
-            // D
-            eTwoFlatNote::DDoubleFlat => {
-                return Self {
-                    letter: eNoteLetter::D,
-                    modifier: eNoteModifier::DoubleFlat,
-                }
-            }
-            eTwoFlatNote::DFlat => {
-                return Self {
-                    letter: eNoteLetter::D,
-                    modifier: eNoteModifier::Flat,
-                }
-            }
-            eTwoFlatNote::DNatural => {
-                return Self {
-                    letter: eNoteLetter::D,
-                    modifier: eNoteModifier::Natural,
-                }
-            }
             // A
-            eTwoFlatNote::ADoubleFlat => {
+            eThreeFlatNote::ADoubleFlat => {
                 return Self {
                     letter: eNoteLetter::A,
                     modifier: eNoteModifier::DoubleFlat,
                 }
             }
-            eTwoFlatNote::AFlat => {
+            eThreeFlatNote::AFlat => {
                 return Self {
                     letter: eNoteLetter::A,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eTwoFlatNote::ANatural => {
+            eThreeFlatNote::ANatural => {
                 return Self {
                     letter: eNoteLetter::A,
                     modifier: eNoteModifier::Natural,
                 }
             }
             // E
-            eTwoFlatNote::EDoubleFlat => {
+            eThreeFlatNote::EDoubleFlat => {
                 return Self {
                     letter: eNoteLetter::E,
                     modifier: eNoteModifier::DoubleFlat,
                 }
             }
-            eTwoFlatNote::EFlat => {
+            eThreeFlatNote::EFlat => {
                 return Self {
                     letter: eNoteLetter::E,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eTwoFlatNote::ENatural => {
+            eThreeFlatNote::ENatural => {
                 return Self {
                     letter: eNoteLetter::E,
                     modifier: eNoteModifier::Natural,
                 }
             }
             // B
-            eTwoFlatNote::BDoubleFlat => {
+            eThreeFlatNote::BDoubleFlat => {
                 return Self {
                     letter: eNoteLetter::B,
                     modifier: eNoteModifier::DoubleFlat,
                 }
             }
-            eTwoFlatNote::BFlat => {
+            eThreeFlatNote::BFlat => {
                 return Self {
                     letter: eNoteLetter::B,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eTwoFlatNote::BNatural => {
+            eThreeFlatNote::BNatural => {
                 return Self {
                     letter: eNoteLetter::B,
                     modifier: eNoteModifier::Natural,
                 }
             }
             // F
-            eTwoFlatNote::FFlat => {
+            eThreeFlatNote::FFlat => {
                 return Self {
                     letter: eNoteLetter::F,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eTwoFlatNote::FNatural => {
+            eThreeFlatNote::FNatural => {
                 return Self {
                     letter: eNoteLetter::F,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eTwoFlatNote::FSharp => {
+            eThreeFlatNote::FSharp => {
                 return Self {
                     letter: eNoteLetter::F,
                     modifier: eNoteModifier::Sharp,
                 }
             }
             // C
-            eTwoFlatNote::CFlat => {
+            eThreeFlatNote::CFlat => {
                 return Self {
                     letter: eNoteLetter::C,
                     modifier: eNoteModifier::Flat,
                 }
             }
-            eTwoFlatNote::CNatural => {
+            eThreeFlatNote::CNatural => {
                 return Self {
                     letter: eNoteLetter::C,
                     modifier: eNoteModifier::Natural,
                 }
             }
-            eTwoFlatNote::CSharp => {
+            eThreeFlatNote::CSharp => {
                 return Self {
                     letter: eNoteLetter::C,
+                    modifier: eNoteModifier::Sharp,
+                }
+            }
+            // G
+            eThreeFlatNote::GFlat => {
+                return Self {
+                    letter: eNoteLetter::G,
+                    modifier: eNoteModifier::Flat,
+                }
+            }
+            eThreeFlatNote::GNatural => {
+                return Self {
+                    letter: eNoteLetter::G,
+                    modifier: eNoteModifier::Natural,
+                }
+            }
+            eThreeFlatNote::GSharp => {
+                return Self {
+                    letter: eNoteLetter::G,
+                    modifier: eNoteModifier::Sharp,
+                }
+            }
+            // D
+            eThreeFlatNote::DFlat => {
+                return Self {
+                    letter: eNoteLetter::D,
+                    modifier: eNoteModifier::Flat,
+                }
+            }
+            eThreeFlatNote::DNatural => {
+                return Self {
+                    letter: eNoteLetter::D,
+                    modifier: eNoteModifier::Natural,
+                }
+            }
+            eThreeFlatNote::DSharp => {
+                return Self {
+                    letter: eNoteLetter::D,
                     modifier: eNoteModifier::Sharp,
                 }
             }
