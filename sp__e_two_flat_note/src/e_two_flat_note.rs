@@ -143,7 +143,7 @@ impl TryFrom<(eNoteLetter, eNoteModifier)> for eTwoFlatNote {
             (eNoteLetter::C, eNoteModifier::Natural) => Ok(Self::CNatural),
             (eNoteLetter::C, eNoteModifier::Sharp) => Ok(Self::CSharp),
             // Failure
-            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 2b note", note, modifier).as_str()))),
+            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 2♭ note", note, modifier).as_str()))),
         }
     }
 }

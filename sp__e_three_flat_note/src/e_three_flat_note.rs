@@ -143,7 +143,7 @@ impl TryFrom<(eNoteLetter, eNoteModifier)> for eThreeFlatNote {
             (eNoteLetter::D, eNoteModifier::Natural) => Ok(Self::DNatural),
             (eNoteLetter::D, eNoteModifier::Sharp) => Ok(Self::DSharp),
             // Failure
-            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 3b note", note, modifier).as_str()))),
+            (note, modifier) => Err(Box::new(sImpossibleOperationError::new(format!("{}{} cannot be converted to a 3♭ note", note, modifier).as_str()))),
         }
     }
 }
