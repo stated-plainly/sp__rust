@@ -10,6 +10,7 @@ members = [
 	"sp__e_note_modifier",
 	"sp__e_one_note",
 	"sp__e_six_flat_note",
+	"sp__e_six_note",
 	"sp__e_three_flat_note",
 	"sp__e_three_note",
 	"sp__e_two_flat_note",
