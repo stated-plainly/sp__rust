@@ -14,6 +14,31 @@ pub enum eNoteLetter {
     B,
 }
 
+impl eNoteLetter {
+    pub fn prev(&self) -> Self {
+        match self {
+            Self::C => Self::B,
+            Self::D => Self::C,
+            Self::E => Self::D,
+            Self::F => Self::E,
+            Self::G => Self::F,
+            Self::A => Self::G,
+            Self::B => Self::A,
+        }
+    }
+
+    pub fn next(&self) -> Self {
+        match self {
+            Self::C => Self::D,
+            Self::D => Self::E,
+            Self::E => Self::F,
+            Self::F => Self::G,
+            Self::G => Self::A,
+            Self::A => Self::B,
+            Self::B => Self::C,
+        }
+    }
+}
 
 impl Display for eNoteLetter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
