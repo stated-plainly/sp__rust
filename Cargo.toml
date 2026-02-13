@@ -8,6 +8,7 @@ members = [
 	"sp__e_four_note",
 	"sp__e_four_sharp_note",
 	"sp__e_nine_flat_note",
+	"sp__e_nine_note",
 	"sp__e_note_letter",
 	"sp__e_note_modifier",
 	"sp__e_one_note",
