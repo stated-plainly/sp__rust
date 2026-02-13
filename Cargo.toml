@@ -5,6 +5,7 @@ members = [
 	"sp__e_note_modifier",
 	"sp__e_one_note",
 	"sp__e_three_flat_note",
+	"sp__e_three_note",
 	"sp__e_two_flat_note",
 	"sp__e_two_note",
 	"sp__e_scale_degree",
