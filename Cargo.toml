@@ -32,6 +32,7 @@ members = [
 	"sp__s_one_note",
 	"sp__s_owner",
 	"sp__s_token",
+	"sp__s_two_flat_note",
 	"sp__t_ast",
 	"sp__t_error",
 	"sp__t_keyboard_friendly_name",

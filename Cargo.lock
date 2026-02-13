@@ -312,6 +312,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "sp__s_two_flat_note"
+version = "1.0.0"
+dependencies = [
+ "sp__e_note_letter",
+ "sp__e_note_modifier",
+ "sp__e_two_flat_note",
+ "sp__t_keyboard_friendly_name",
+ "sp__t_note",
+]
+
+[[package]]
 name = "sp__t_ast"
 version = "1.0.0"
 
