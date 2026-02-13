@@ -12,6 +12,7 @@ pub enum eNoteModifier {
     Natural,
     Sharp,
     DoubleSharp,
+    TripleSharp,
 }
 
 impl eNoteModifier {
@@ -22,6 +23,7 @@ impl eNoteModifier {
             Self::Natural => Ok(Self::Flat),
             Self::Sharp => Ok(Self::Natural),
             Self::DoubleSharp => Ok(Self::Sharp),
+            Self::TripleSharp => Ok(Self::DoubleSharp),
         }
     }
 
@@ -31,7 +33,8 @@ impl eNoteModifier {
             Self::Flat => Ok(Self::Natural),
             Self::Natural => Ok(Self::Sharp),
             Self::Sharp => Ok(Self::DoubleSharp),
-            Self::DoubleSharp => Err(Box::new(sImpossibleOperationError::new("Cannot sharpen a double-sharp note"))),
+            Self::DoubleSharp => Ok(Self::TripleSharp),
+            Self::TripleSharp => Err(Box::new(sImpossibleOperationError::new("Cannot sharpen a triple-sharp note"))),
         }
     }
 }
@@ -44,6 +47,7 @@ impl Display for eNoteModifier {
             Self::Natural => write!(f, "{}", "♮"),
             Self::Sharp => write!(f, "{}", "♯"),
             Self::DoubleSharp => write!(f, "{}", "𝄪"),
+            Self::TripleSharp => write!(f, "{}", "♯𝄪"),
         }
     }
 }
@@ -56,6 +60,7 @@ impl tKeyboardFriendlyName for eNoteModifier {
             Self::Natural => "",
             Self::Sharp => "s",
             Self::DoubleSharp => "ss",
+            Self::TripleSharp => "sss",
         }.to_string()
     }
 }
