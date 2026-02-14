@@ -1,8 +1,0 @@
-[package]
-name = "sp__t_note"
-version = "1.0.0"
-edition = "2024"
-
-[dependencies]
-sp__e_note_letter = { path = "../sp__e_note_letter" }
-sp__e_note_modifier = { path = "../sp__e_note_modifier" }
