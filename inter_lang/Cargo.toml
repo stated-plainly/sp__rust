@@ -1,0 +1,10 @@
+[package]
+name = "inter_lang"
+version = "1.0.0"
+edition = "2024"
+
+[dependencies]
+error = { path = "../error" }
+identifier = { path = "../identifier" }
+regex = "1.12.3"
+syntax = { path = "../syntax" }

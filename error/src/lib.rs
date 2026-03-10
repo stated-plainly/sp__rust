@@ -1,6 +1,6 @@
 #![allow(non_camel_case_types)]
-mod enums;
+pub mod enums;
 
-mod structs;
+pub mod structs;
 
-mod traits;
+pub mod traits;
