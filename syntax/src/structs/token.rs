@@ -1,16 +1,18 @@
 use std::fmt::Display;
+use std::fmt::Formatter;
+use std::fmt::Result;
 
-use crate::traits::tTokenIdentifier;
+use identifier::traits::tIdentifier;
 
-pub struct sToken<TI: tTokenIdentifier> {
-    identifier: TI,
+pub struct sToken<I: tIdentifier> {
+    identifier: I,
     value: String,
 }
 
-impl<TI: tTokenIdentifier> sToken<TI> {
-    pub fn new(lexeme: TI, value: &str) -> Self {
+impl<I: tIdentifier> sToken<I> {
+    pub fn new(identifier: I, value: &str) -> Self {
         Self {
-            identifier: lexeme,
+            identifier,
             value: value.to_string(),
         }
     }
@@ -19,13 +21,13 @@ impl<TI: tTokenIdentifier> sToken<TI> {
         &self.value
     }
 
-    pub fn get_identifier(&self) -> TI {
+    pub fn get_identifier(&self) -> I {
         self.identifier
     }
 }
 
-impl<TI: tTokenIdentifier> Display for sToken<TI> {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl<I: tIdentifier> Display for sToken<I> {
+    fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         write!(f, "Token({} :: \"{}\")", self.get_identifier(), self.get_value())
     }
 }
