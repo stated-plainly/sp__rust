@@ -16,7 +16,7 @@ impl sStringValue {
 }
 
 impl tItem for sStringValue {
-    fn as_string(&self, tabs: u8, indent_first_line: bool) -> String {
+    fn as_string(&self, tabs: usize, indent_first_line: bool) -> String {
         let mut as_string: String = "".to_string();
 
         if indent_first_line {
