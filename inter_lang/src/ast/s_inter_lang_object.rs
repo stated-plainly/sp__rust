@@ -22,7 +22,7 @@ impl sInterLangObject {
 
 impl Display for sInterLangObject {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
-        let mut tabs: u8 = 0;
+        let mut tabs: usize = 0;
         let mut as_string: String = "InterLangObject(\n".to_string();
         
         {
