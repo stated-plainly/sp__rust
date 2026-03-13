@@ -54,6 +54,7 @@ impl tItem for sListValue {
 
             for value in self.get_values() {
                 as_string += value.as_string(tabs, true).as_str();
+                as_string += "\n";
             }
         }
 
