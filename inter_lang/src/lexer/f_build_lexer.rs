@@ -1,5 +1,9 @@
 use regex::Regex;
-use syntax::{enums::eLexeme, structs::{sLexer, sPatternLexeme, sValueLexeme}};
+
+use syntax::enums::eLexeme;
+use syntax::structs::sLexer;
+use syntax::structs::sPatternLexeme;
+use syntax::structs::sValueLexeme;
 
 use crate::lexer::eTokenIdentifier;
 
