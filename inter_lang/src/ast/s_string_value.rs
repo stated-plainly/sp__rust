@@ -1,5 +1,4 @@
-use crate::ast::tItem;
-use crate::ast::tValue;
+use crate::ast::tASTItem;
 
 pub struct sStringValue {
     value: String,
@@ -15,7 +14,7 @@ impl sStringValue {
     }
 }
 
-impl tItem for sStringValue {
+impl tASTItem for sStringValue {
     fn as_string(&self, tabs: usize, indent_first_line: bool) -> String {
         let mut as_string: String = "".to_string();
 
@@ -29,9 +28,7 @@ impl tItem for sStringValue {
 
         as_string
     }
-}
 
-impl tValue for sStringValue {
     fn has_same_composition(&self, other: &Self) -> bool {
         self.get_value() == other.get_value()
     }

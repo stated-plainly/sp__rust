@@ -1,4 +1,4 @@
-use crate::ast::tItem;
+use crate::ast::tASTItem;
 
 pub struct sKey {
     key: String,
@@ -14,7 +14,7 @@ impl sKey {
     }
 }
 
-impl tItem for sKey {
+impl tASTItem for sKey {
     fn as_string(&self, tabs: usize, indent_first_line: bool) -> String {
         let mut as_string = "".to_string();
 
@@ -27,5 +27,9 @@ impl tItem for sKey {
         as_string += format!("Key({})", self.get_key()).as_str();
 
         as_string
+    }
+
+    fn has_same_composition(&self, other: &Self) -> bool {
+        self.get_key() == other.get_key()
     }
 }

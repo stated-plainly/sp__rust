@@ -1,8 +1,7 @@
 use crate::ast::sListValue;
 use crate::ast::sObjectValue;
 use crate::ast::sStringValue;
-use crate::ast::tItem;
-use crate::ast::tValue;
+use crate::ast::tASTItem;
 
 pub enum eValue {
     String(sStringValue),
@@ -10,7 +9,7 @@ pub enum eValue {
     Object(sObjectValue),
 }
 
-impl tItem for eValue {
+impl tASTItem for eValue {
     fn as_string(&self, tabs: usize, indent_first_line: bool) -> String {
         match self {
             Self::String(string_value) => string_value.as_string(tabs, indent_first_line),
@@ -18,9 +17,7 @@ impl tItem for eValue {
             Self::Object(object_value) => object_value.as_string(tabs, indent_first_line),
         }
     }
-}
 
-impl tValue for eValue {
     fn has_same_composition(&self, other: &Self) -> bool {
         match self {
             Self::String(self_string_value) => {

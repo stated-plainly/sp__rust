@@ -1,6 +1,5 @@
 use crate::ast::eValue;
-use crate::ast::tItem;
-use crate::ast::tValue;
+use crate::ast::tASTItem;
 
 pub struct sListValue {
     values: Vec<eValue>,
@@ -31,7 +30,7 @@ impl sListValue {
     }
 }
 
-impl tItem for sListValue {
+impl tASTItem for sListValue {
     fn as_string(&self, tabs: usize, indent_first_line: bool) -> String {
         let mut as_string = "".to_string();
 
@@ -63,9 +62,7 @@ impl tItem for sListValue {
 
         as_string
     }
-}
 
-impl tValue for sListValue {
     fn has_same_composition(&self, other: &Self) -> bool {
         if self.values.len() > 0 && other.get_values().len() > 0 {
             let first_self_item = &self.values[0];

@@ -1,6 +1,6 @@
 use crate::ast::eValue;
 use crate::ast::sKey;
-use crate::ast::tItem;
+use crate::ast::tASTItem;
 
 pub struct sKVP {
     key: sKey,
@@ -21,7 +21,7 @@ impl sKVP {
     }
 }
 
-impl tItem for sKVP {
+impl tASTItem for sKVP {
     fn as_string(&self, tabs: usize, indent_first_line: bool) -> String {
         let mut as_string = "".to_string();
 
@@ -55,5 +55,17 @@ impl tItem for sKVP {
         as_string += ")";
 
         as_string
+    }
+
+    fn has_same_composition(&self, other: &Self) -> bool {
+        if !self.get_key().has_same_composition(other.get_key()) {
+            return false;
+        }
+
+        if !self.get_value().has_same_composition(other.get_value()) {
+            return false;
+        }
+
+        true
     }
 }
