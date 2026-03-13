@@ -1,8 +1,8 @@
-use error::enums::eError;
 use syntax::structs::sLexer;
 
 use crate::ast::sInterLangObject;
-use crate::lexer::{eTokenIdentifier, f_build_lexer};
+use crate::lexer::eTokenIdentifier;
+use crate::lexer::f_build_lexer;
 use crate::parser::sParser;
 
 pub struct sInterLang {
@@ -18,7 +18,7 @@ impl sInterLang {
         }
     }
 
-    pub fn parse(&mut self, source_code: &str) -> Result<sInterLangObject, eError> {
-        todo!()
+    pub fn parse(&mut self, source_code: &str) -> sInterLangObject {
+        self.parser.parse(&mut self.lexer.tokenise(source_code))
     }
 }
