@@ -12,6 +12,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "casper"
+version = "1.0.0"
+
+[[package]]
+name = "casper_compiler"
+version = "1.0.0"
+
+[[package]]
 name = "error"
 version = "1.0.0"
 
