@@ -1,2 +1,2 @@
-mod lexeme;
-pub use lexeme::tLexeme;
+mod t_lexeme;
+pub use t_lexeme::tLexeme;
