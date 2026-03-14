@@ -4,7 +4,7 @@ use std::fmt::Result;
 
 use identifier::traits::tIdentifier;
 
-#[derive(Copy, Clone, Eq, PartialEq, Ord, PartialOrd, Hash, Debug, Default)]
+#[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub(crate) enum eTokenIdentifier {
     LowerCaseLetter,
     Number,
@@ -19,11 +19,29 @@ pub(crate) enum eTokenIdentifier {
     CurlyClose,
     Newline,
     Tab,
-    #[default]
     Other,
 }
 
-impl tIdentifier for eTokenIdentifier {}
+impl tIdentifier for eTokenIdentifier {
+    fn as_vec() -> Vec<eTokenIdentifier> {
+        vec![
+            Self::LowerCaseLetter,
+            Self::Number,
+            Self::Underscore,
+            Self::Colon,
+            Self::Whitespace,
+            Self::ParenOpen,
+            Self::ParenClose,
+            Self::SquareOpen,
+            Self::SquareClose,
+            Self::CurlyOpen,
+            Self::CurlyClose,
+            Self::Newline,
+            Self::Tab,
+            Self::Other,
+        ]
+    }
+}
 
 impl Display for eTokenIdentifier {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
