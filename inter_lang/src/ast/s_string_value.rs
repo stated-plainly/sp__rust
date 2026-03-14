@@ -29,7 +29,7 @@ impl tASTItem for sStringValue {
         as_string
     }
 
-    fn has_same_composition(&self, other: &Self) -> bool {
-        self.get_value() == other.get_value()
+    fn has_same_composition(&self, _other: &Self) -> bool {
+        true
     }
 }
