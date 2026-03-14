@@ -15,7 +15,7 @@ dependencies = [
 name = "casper"
 version = "1.0.0"
 dependencies = [
- "identifier",
+ "regex 1.0.0",
 ]
 
 [[package]]
@@ -27,16 +27,11 @@ name = "error"
 version = "1.0.0"
 
 [[package]]
-name = "identifier"
-version = "1.0.0"
-
-[[package]]
 name = "inter_lang"
 version = "1.0.0"
 dependencies = [
  "error",
- "identifier",
- "regex",
+ "regex 1.0.0",
  "syntax",
 ]
 
@@ -45,6 +40,13 @@ name = "memchr"
 version = "2.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f8ca58f447f06ed17d5fc4043ce1b10dd205e060fb3ce5b979b8ed8e59ff3f79"
+
+[[package]]
+name = "regex"
+version = "1.0.0"
+dependencies = [
+ "regex 1.12.3",
+]
 
 [[package]]
 name = "regex"
@@ -79,6 +81,5 @@ checksum = "dc897dd8d9e8bd1ed8cdad82b5966c3e0ecae09fb1907d58efaa013543185d0a"
 name = "syntax"
 version = "1.0.0"
 dependencies = [
- "identifier",
- "regex",
+ "regex 1.0.0",
 ]
