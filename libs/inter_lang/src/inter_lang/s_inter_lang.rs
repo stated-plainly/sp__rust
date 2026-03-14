@@ -1,4 +1,4 @@
-use syntax::structs::sLexer;
+use syntax::exports::sLexer;
 
 use crate::ast::sInterLangObject;
 use crate::lexer::eTokenIdentifier;

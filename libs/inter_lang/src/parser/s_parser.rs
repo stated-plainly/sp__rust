@@ -1,4 +1,4 @@
-use syntax::structs::sToken;
+use syntax::exports::sToken;
 
 use crate::ast::eValue;
 use crate::ast::sInterLangObject;

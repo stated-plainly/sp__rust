@@ -1,9 +1,9 @@
-use regex::Regex;
+use regex::exports::Regex;
 
-use syntax::enums::eLexeme;
-use syntax::structs::sLexer;
-use syntax::structs::sPatternLexeme;
-use syntax::structs::sValueLexeme;
+use syntax::exports::eLexeme;
+use syntax::exports::sLexer;
+use syntax::exports::sPatternLexeme;
+use syntax::exports::sValueLexeme;
 
 use crate::lexer::eTokenIdentifier;
 

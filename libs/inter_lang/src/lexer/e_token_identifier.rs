@@ -2,7 +2,7 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 use std::fmt::Result;
 
-use identifier::traits::tIdentifier;
+use syntax::exports::tTokenIdentifier;
 
 #[derive(Copy, Clone, PartialEq, Eq, Debug)]
 pub(crate) enum eTokenIdentifier {
@@ -22,7 +22,7 @@ pub(crate) enum eTokenIdentifier {
     Other,
 }
 
-impl tIdentifier for eTokenIdentifier {
+impl tTokenIdentifier for eTokenIdentifier {
     fn as_vec() -> Vec<eTokenIdentifier> {
         vec![
             Self::LowerCaseLetter,

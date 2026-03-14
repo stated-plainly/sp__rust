@@ -4,7 +4,6 @@ version = "1.0.0"
 edition = "2024"
 
 [dependencies]
-regex = "1.12.3"
 error = { path = "../error" }
-identifier = { path = "../identifier" }
+regex = { path = "../regex"}
 syntax = { path = "../syntax" }
