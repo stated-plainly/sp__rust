@@ -1,2 +1,2 @@
-mod error;
-pub use error::eError;
+mod e_error;
+pub use e_error::eError;
