@@ -2,25 +2,24 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 use std::fmt::Result;
 
-use identifier::traits::tIdentifier;
-
 use crate::structs::sToken;
 use crate::traits::tLexeme;
+use crate::traits::tTokenIdentifier;
 
-pub struct sValueLexeme<I: tIdentifier> {
-    identifier: I,
+pub struct sValueLexeme<TI: tTokenIdentifier> {
+    identifier: TI,
     value: String,
 }
 
-impl<I: tIdentifier> sValueLexeme<I> {
-    pub fn new(identifier: I, value: &str) -> Self {
+impl<TI: tTokenIdentifier> sValueLexeme<TI> {
+    pub fn new(identifier: TI, value: &str) -> Self {
         Self {
             identifier,
             value: value.to_string(),
         }
     }
 
-    pub fn get_identifier(&self) -> I {
+    pub fn get_identifier(&self) -> TI {
         self.identifier
     }
 
@@ -29,8 +28,8 @@ impl<I: tIdentifier> sValueLexeme<I> {
     }
 }
 
-impl<I: tIdentifier> tLexeme<I> for sValueLexeme<I> {
-    fn try_tokenise(&self, source_code: &str, char_index: usize) -> Option<sToken<I>> {
+impl<TI: tTokenIdentifier> tLexeme<TI> for sValueLexeme<TI> {
+    fn try_tokenise(&self, source_code: &str, char_index: usize) -> Option<sToken<TI>> {
         let source_code_slice = &source_code[char_index..];
 
         if !source_code_slice.starts_with(self.get_value()) { return None; }
@@ -39,7 +38,7 @@ impl<I: tIdentifier> tLexeme<I> for sValueLexeme<I> {
     }
 }
 
-impl<I: tIdentifier> Display for sValueLexeme<I> {
+impl<TI: tTokenIdentifier> Display for sValueLexeme<TI> {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         write!(f, "ValueLexeme({} :: \"{}\")", self.get_identifier(), self.get_value())
     }

@@ -2,27 +2,26 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 use std::fmt::Result;
 
-use regex::Regex;
-
-use identifier::traits::tIdentifier;
+use regex::exports::Regex;
 
 use crate::structs::sToken;
 use crate::traits::tLexeme;
+use crate::traits::tTokenIdentifier;
 
-pub struct sPatternLexeme<I: tIdentifier> {
-    identifier: I,
+pub struct sPatternLexeme<TI: tTokenIdentifier> {
+    identifier: TI,
     pattern: Regex,
 }
 
-impl<I: tIdentifier> sPatternLexeme<I> {
-    pub fn new(identifier: I, pattern: Regex) -> Self {
+impl<TI: tTokenIdentifier> sPatternLexeme<TI> {
+    pub fn new(identifier: TI, pattern: Regex) -> Self {
         Self {
             identifier,
             pattern,
         }
     }
 
-    pub fn get_identifier(&self) -> I {
+    pub fn get_identifier(&self) -> TI {
         self.identifier
     }
 
@@ -31,8 +30,8 @@ impl<I: tIdentifier> sPatternLexeme<I> {
     }
 }
 
-impl<I: tIdentifier> tLexeme<I> for sPatternLexeme<I> {
-    fn try_tokenise(&self, source_code: &str, index: usize) -> Option<sToken<I>> {
+impl<TI: tTokenIdentifier> tLexeme<TI> for sPatternLexeme<TI> {
+    fn try_tokenise(&self, source_code: &str, index: usize) -> Option<sToken<TI>> {
         let source_code_slice = &source_code[index..];
 
         let Some(captures) = self.pattern.captures(source_code_slice) else { return None };
@@ -41,7 +40,7 @@ impl<I: tIdentifier> tLexeme<I> for sPatternLexeme<I> {
     }
 }
 
-impl<I: tIdentifier> Display for sPatternLexeme<I> {
+impl<TI: tTokenIdentifier> Display for sPatternLexeme<TI> {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         write!(f, "PatternLexeme({} :: /{}/)", self.get_identifier(), self.get_pattern())
     }

@@ -1,7 +1,6 @@
-use identifier::traits::tIdentifier;
-
 use crate::structs::sToken;
+use crate::traits::tTokenIdentifier;
 
-pub trait tLexeme<I: tIdentifier> {
-    fn try_tokenise(&self, source_code: &str, char_index: usize) -> Option<sToken<I>>;
+pub trait tLexeme<TI: tTokenIdentifier> {
+    fn try_tokenise(&self, source_code: &str, char_index: usize) -> Option<sToken<TI>>;
 }

@@ -2,20 +2,19 @@ use std::fmt::Display;
 use std::fmt::Formatter;
 use std::fmt::Result;
 
-use identifier::traits::tIdentifier;
-
 use crate::structs::sPatternLexeme;
 use crate::structs::sToken;
 use crate::structs::sValueLexeme;
 use crate::traits::tLexeme;
+use crate::traits::tTokenIdentifier;
 
-pub enum eLexeme<I: tIdentifier> {
-    Value(sValueLexeme<I>),
-    Pattern(sPatternLexeme<I>),
+pub enum eLexeme<TI: tTokenIdentifier> {
+    Value(sValueLexeme<TI>),
+    Pattern(sPatternLexeme<TI>),
 }
 
-impl<I: tIdentifier> tLexeme<I> for eLexeme<I> {
-    fn try_tokenise(&self, source_code: &str, char_index: usize) -> Option<sToken<I>> {
+impl<TI: tTokenIdentifier> tLexeme<TI> for eLexeme<TI> {
+    fn try_tokenise(&self, source_code: &str, char_index: usize) -> Option<sToken<TI>> {
         match self {
             Self::Value(value_lexeme) => value_lexeme.try_tokenise(source_code, char_index),
             Self::Pattern(pattern_lexeme) => pattern_lexeme.try_tokenise(source_code, char_index),
@@ -23,7 +22,7 @@ impl<I: tIdentifier> tLexeme<I> for eLexeme<I> {
     }
 }
 
-impl<I: tIdentifier> Display for eLexeme<I> {
+impl<TI: tTokenIdentifier> Display for eLexeme<TI> {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result {
         match self {
             Self::Value(value_lexeme) => value_lexeme.fmt(f),
